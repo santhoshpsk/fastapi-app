@@ -2,4 +2,6 @@ version: 0.0
 os: linux
 hooks:
   ApplicationStop:
-  - location: ./app-stop.sh
+  - location: ""
+    commands:
+    - echo "Hello World"
