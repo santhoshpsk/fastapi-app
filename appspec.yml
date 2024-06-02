@@ -4,4 +4,4 @@ hooks:
   BeforeInstall:
   - location: ""
     commands:
-    - echo "Not 1 Hello World"
+    - echo "Not Hello World"
