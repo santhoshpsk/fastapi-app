@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 hooks:
-  ApplicationStop:
+  BeforeInstall:
   - location: ""
     commands:
     - echo "Not Hello World"
