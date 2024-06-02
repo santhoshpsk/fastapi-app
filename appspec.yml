@@ -4,4 +4,4 @@ hooks:
   ApplicationStop:
   - location: ""
     commands:
-    - echo "Hello World"
+    - echo "Not Hello World1"
