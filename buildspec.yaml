@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    on-failure: ABORT
+    commands:
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 975049939172.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+  build:
+    on-failure: ABORT
+    commands:
+    - docker build -t 975049939172.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:$CODEBUILD_RESOLVED_SOURCE_VERSION .
+  post_build:
+    on-failure: ABORT
+    commands:
+    - docker push 975049939172.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:$CODEBUILD_RESOLVED_SOURCE_VERSION
