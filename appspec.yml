@@ -2,4 +2,6 @@ version: 0.0
 os: linux
 hooks:
   ApplicationStop:
-  - location: echo Hello World
+  - location: ""
+    commands:
+    - echo "Hello World"
